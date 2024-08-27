@@ -37,10 +37,9 @@ $(window).resize(function() {
 	};
 })(jQuery);
 
-function timeElapse(date){
+function timeElapse(startDate){
 	var current = Date();
-	var startDate = Date("2021-08-24" + 'T00:00:00');
-	var seconds = (current - startDate) / 1000;
+	var seconds = (Date.parse(current) - Date.parse(startDate)) / 1000;
 	var days = Math.floor(seconds / (3600 * 24));
 	seconds = seconds % (3600 * 24);
 	var hours = Math.floor(seconds / 3600);
